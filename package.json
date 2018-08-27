@@ -1,0 +1,57 @@
+{
+  "name": "@gdjiami/jslib",
+  "version": "0.1.0",
+  "description": "Jiami FrontEnd helpers and Services",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rimraf lib es",
+    "build:es6": "tsc -d --outDir ./lib --module CommonJS ",
+    "postbuild:es6": "cpx \"src/**/!(example)/*.+(css|jpg|jpeg|gif|png)\" ./lib",
+    "postbuild:es6module": "cpx \"src/**/!(example)/*.+(css|jpg|jpeg|gif|png)\" ./es",
+    "build:es6module": "tsc -d --outDir ./es",
+    "build": "npm run build:es6 && npm run build:es6module",
+    "lint": "tslint -c tslint.json \"src/**/*.ts?(x)\"",
+    "prettier": "prettier --config .prettierrc --write \"src/**/*.ts?(x)\"",
+    "precommit": "lint-staged",
+    "parcel": "parcel"
+  },
+  "lint-staged": {
+    "*.ts?(x)": [
+      "npm run prettier",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@code.ejiahe.com:25522/WEB/jm-jslib.git"
+  },
+  "files": [
+    "lib",
+    "es",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "jslib"
+  ],
+  "author": "ivan",
+  "license": "MIT",
+  "peerDependencies": {
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "husky": "^0.14.3",
+    "jh-tslint": "^1.0.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.10.0",
+    "tslint-eslint-rules": "4.1.1",
+    "tslint-react": "3.2.0",
+    "typescript": "^3.0.1"
+  }
+}
