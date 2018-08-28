@@ -1,6 +1,6 @@
 {
   "name": "@gdjiami/jslib",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Jiami FrontEnd helpers and Services",
   "main": "lib/index.js",
   "module": "es/index.js",
