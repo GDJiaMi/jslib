@@ -28,6 +28,12 @@ export interface AuthParams {
   grantType: GRANT_TYPE
 }
 
+export interface AuthByPasswordParams {
+  user: string
+  password: string
+  extra?: any
+}
+
 export interface RefreshParams {
   refreshToken: string
   grantType: GRANT_TYPE
@@ -35,7 +41,14 @@ export interface RefreshParams {
 
 export interface TokenAuthServiceConfig {
   clientId: string
-  getToken: (params: AuthParams) => Promise<AuthInfo>
+  /**
+   * 通过code鉴权
+   */
+  getToken?: (params: AuthParams) => Promise<AuthInfo>
+  /**
+   * 通过用户名密码鉴权
+   */
+  getTokenByPassword?: (params: AuthByPasswordParams) => Promise<AuthInfo>
   refreshToken: (params: RefreshParams) => Promise<AuthInfo>
   onAuthSuccess?: (info: AuthInfo) => void
   onAuthFailed?: (error: Error) => void
@@ -48,18 +61,73 @@ export default class TokenAuthService {
   private info: AuthInfo
   private refreshing: boolean
   private refreshCallbacks: Array<(err?: Error) => void> = []
+
   public constructor(config: TokenAuthServiceConfig) {
     this.config = config
+    this.getUserInfo()
   }
 
   private get storage() {
     return (this.config && this.config.storage) || window.sessionStorage
   }
 
+  public logout() {
+    this.clean()
+  }
+
+  public clean() {
+    // @ts-ignore
+    this.info = undefined
+    this.storage.removeItem(TOKEN_CACHE_KEY)
+  }
+
+  /**
+   * 更新鉴权信息
+   */
+  public saveAuthInfo(info: AuthInfo) {
+    this.info = info
+    this.storage.setItem(TOKEN_CACHE_KEY, JSON.stringify(info))
+  }
+
+  /**
+   * 通过用户名密码鉴权
+   */
+  public async authByPassword(params: AuthByPasswordParams) {
+    if (this.config.getTokenByPassword == null) {
+      throw new Error('TokenAuthService: getTokenByPassword 未实现')
+    }
+
+    const info = this.storage.getItem(TOKEN_CACHE_KEY)
+    if (info != null) {
+      this.info = JSON.parse(info)
+      if (this.config.onAuthSuccess) {
+        this.config.onAuthSuccess(this.info)
+      }
+      return
+    }
+
+    try {
+      const res = await this.config.getTokenByPassword(params)
+      this.saveAuthInfo(res)
+      if (this.config.onAuthSuccess) {
+        this.config.onAuthSuccess(res)
+      }
+    } catch (err) {
+      if (this.config.onAuthFailed) {
+        this.config.onAuthFailed(err)
+      }
+      throw err
+    }
+  }
+
   /**
    * token 鉴权
    */
   public async auth() {
+    if (this.config.getToken == null) {
+      throw new Error('TokenAuthService: getToken 未实现')
+    }
+
     const info = this.storage.getItem(TOKEN_CACHE_KEY)
     if (info != null) {
       this.info = JSON.parse(info)
@@ -87,8 +155,7 @@ export default class TokenAuthService {
       }
 
       const res = await this.config.getToken(payload)
-      this.storage.setItem(TOKEN_CACHE_KEY, JSON.stringify(res))
-      this.info = res
+      this.saveAuthInfo(res)
       if (this.config.onAuthSuccess) {
         this.config.onAuthSuccess(this.info)
       }
@@ -145,6 +212,8 @@ export default class TokenAuthService {
       if (this.config.onRefreshFailed) {
         this.config.onRefreshFailed(err)
       }
+      // 清理鉴权信息
+      this.clean()
       throw err
     } finally {
       this.refreshing = false
@@ -160,6 +229,15 @@ export default class TokenAuthService {
   }
 
   public getUserInfo() {
+    if (this.info) {
+      return this.info
+    }
+
+    const info = this.storage.getItem(TOKEN_CACHE_KEY)
+    if (info != null) {
+      this.info = JSON.parse(info)
+    }
+
     return this.info
   }
 }
