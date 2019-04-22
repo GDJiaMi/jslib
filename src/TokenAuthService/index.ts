@@ -10,6 +10,7 @@ export enum GRANT_TYPE {
   Refresh = 'refresh_token',
 }
 const TOKEN_CACHE_KEY = '__auth__'
+const REFRESH_DURATION = 10 * 1000
 
 export interface AuthInfo {
   accessToken: string
@@ -53,6 +54,7 @@ export interface TokenAuthServiceConfig {
   onAuthSuccess?: (info: AuthInfo) => void
   onAuthFailed?: (error: Error) => void
   onRefreshFailed?: (error: Error) => void
+  refreshErrorMessage?: string
   storage?: Storage
 }
 
@@ -61,6 +63,7 @@ export default class TokenAuthService {
   private info: AuthInfo
   private refreshing: boolean
   private refreshCallbacks: Array<(err?: Error) => void> = []
+  private lastRefreshTime: Date = new Date()
 
   public constructor(config: TokenAuthServiceConfig) {
     this.config = config
@@ -190,12 +193,21 @@ export default class TokenAuthService {
       return
     }
 
+    // 判断是否重复刷新, 这可能导致无限请求
+
     try {
       const params = {
         refreshToken: this.info.refreshToken,
         grantType: GRANT_TYPE.Refresh,
       }
       const res = await this.config.refreshToken(params)
+
+      const now = new Date()
+      if (now.getTime() - this.lastRefreshTime.getTime() < REFRESH_DURATION) {
+        throw new Error(this.config.refreshErrorMessage || '会话失效')
+      }
+
+      this.lastRefreshTime = now
       this.info = { ...this.info, ...res }
       this.storage.setItem(TOKEN_CACHE_KEY, JSON.stringify(this.info))
       if (this.refreshCallbacks.length) {
