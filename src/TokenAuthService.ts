@@ -1,10 +1,14 @@
 /**
  * 通用的Token鉴权机制服务
  */
-import getSearch from '../getSearch'
+import { getSearch } from './http'
 
 export const SMS_CLIENT_TYPE = ['qxSMS', 'qxEEMS', 'qxEMS', 'qxCMS']
 export const TOKEN_HEADER = 'X-Access-Token'
+
+/**
+ * 鉴权类型
+ */
 export enum GRANT_TYPE {
   Auth = 'authorization_code',
   Refresh = 'refresh_token',
@@ -12,6 +16,9 @@ export enum GRANT_TYPE {
 const TOKEN_CACHE_KEY = '__auth__'
 const REFRESH_DURATION = 10 * 1000
 
+/**
+ * 鉴权信息
+ */
 export interface AuthInfo {
   accessToken: string
   refreshToken: string
@@ -22,6 +29,9 @@ export interface AuthInfo {
   name: string
 }
 
+/**
+ * 鉴权参数
+ */
 export interface AuthParams {
   code: string
   corpId: string
@@ -29,17 +39,26 @@ export interface AuthParams {
   grantType: GRANT_TYPE
 }
 
+/**
+ * 基于密码的鉴权参数
+ */
 export interface AuthByPasswordParams {
   user: string
   password: string
   extra?: any
 }
 
+/**
+ * refresh token 参数
+ */
 export interface RefreshParams {
   refreshToken: string
   grantType: GRANT_TYPE
 }
 
+/**
+ * 配置项
+ */
 export interface TokenAuthServiceConfig {
   clientId: string
   /**
@@ -58,7 +77,10 @@ export interface TokenAuthServiceConfig {
   storage?: Storage
 }
 
-export default class TokenAuthService {
+/**
+ * 基于Token的鉴权服务
+ */
+export class TokenAuthService {
   private config: TokenAuthServiceConfig
   private info: AuthInfo
   private refreshing: boolean

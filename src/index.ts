@@ -1,3 +1,13 @@
-export { default as getSearch } from './getSearch'
-export { default as hideElement } from './hideElement'
-export { default as TokenAuthService } from './TokenAuthService'
+/**
+ * 入口
+ */
+export * from './date'
+export * from './dom'
+export * from './format'
+export * from './function'
+export * from './geo'
+export * from './http'
+export * from './number'
+export * from './promise'
+export * from './TokenAuthService'
+export * from './ua'
