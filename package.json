@@ -1,9 +1,13 @@
 {
   "name": "@gdjiami/jslib",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Jiami FrontEnd helpers and Services",
   "main": "index.js",
   "typings": "index.d.ts",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rimraf lib",
@@ -25,12 +29,6 @@
     "type": "git",
     "url": "ssh://git@code.ejiahe.com:25522/WEB/jm-jslib.git"
   },
-  "files": [
-    "lib",
-    "es",
-    "README.md",
-    "LICENSE"
-  ],
   "keywords": [
     "jslib"
   ],
@@ -50,7 +48,7 @@
     "tslint": "^5.10.0",
     "tslint-eslint-rules": "4.1.1",
     "tslint-react": "3.2.0",
-    "typescript": "^3.0.1"
+    "typescript": "^3.4.4"
   },
   "dependencies": {
     "qs": "^6.5.2"

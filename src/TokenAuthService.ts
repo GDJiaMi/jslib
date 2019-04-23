@@ -2,6 +2,7 @@
  * 通用的Token鉴权机制服务
  */
 import { getSearch } from './http'
+import { EventEmitter } from './EventEmitter'
 
 export const SMS_CLIENT_TYPE = ['qxSMS', 'qxEEMS', 'qxEMS', 'qxCMS']
 export const TOKEN_HEADER = 'X-Access-Token'
@@ -79,15 +80,20 @@ export interface TokenAuthServiceConfig {
 
 /**
  * 基于Token的鉴权服务
+ * ## events
+ * info-updated
  */
-export class TokenAuthService {
+export class TokenAuthService extends EventEmitter {
+  public static INFO_UPDATED = 'info-updated'
   private config: TokenAuthServiceConfig
   private info: AuthInfo
   private refreshing: boolean
   private refreshCallbacks: Array<(err?: Error) => void> = []
-  private lastRefreshTime: Date = new Date()
+  private lastRefreshTime?: number
+  private refreshTimer: number
 
   public constructor(config: TokenAuthServiceConfig) {
+    super()
     this.config = config
     this.getUserInfo()
   }
@@ -112,6 +118,7 @@ export class TokenAuthService {
   public saveAuthInfo(info: AuthInfo) {
     this.info = info
     this.storage.setItem(TOKEN_CACHE_KEY, JSON.stringify(info))
+    this.infoUpdated()
   }
 
   /**
@@ -134,9 +141,7 @@ export class TokenAuthService {
     try {
       const res = await this.config.getTokenByPassword(params)
       this.saveAuthInfo(res)
-      if (this.config.onAuthSuccess) {
-        this.config.onAuthSuccess(res)
-      }
+      this.handleAuthSuccess()
     } catch (err) {
       if (this.config.onAuthFailed) {
         this.config.onAuthFailed(err)
@@ -163,17 +168,31 @@ export class TokenAuthService {
     }
 
     try {
-      const params = getSearch(window.location.search) as Partial<{
-        code: string
-        corp_id: string
-      }>
+      const params = getSearch(window.location.search) as
+        | {
+            code: string
+            corp_id?: string
+          }
+        | ({
+            from: string // 来源于其他端，这里会直接携带token
+          } & AuthInfo)
+
+      if ('from' in params) {
+        // 直接登录
+        if (params.accessToken == null) {
+          throw new Error(`鉴权失败(from=${params.from})，accessToken为null`)
+        }
+        this.saveAuthInfo(params)
+        this.handleAuthSuccess()
+        return
+      }
 
       if (params.code == null) {
         throw new Error('鉴权失败，code为null')
       }
 
       const payload = {
-        code: params.code!,
+        code: params.code,
         corpId: params.corp_id || '',
         clientId: this.config.clientId,
         grantType: GRANT_TYPE.Auth,
@@ -181,9 +200,7 @@ export class TokenAuthService {
 
       const res = await this.config.getToken(payload)
       this.saveAuthInfo(res)
-      if (this.config.onAuthSuccess) {
-        this.config.onAuthSuccess(this.info)
-      }
+      this.handleAuthSuccess()
     } catch (err) {
       if (this.config.onAuthFailed) {
         this.config.onAuthFailed(err)
@@ -224,14 +241,16 @@ export class TokenAuthService {
       }
       const res = await this.config.refreshToken(params)
 
-      const now = new Date()
-      if (now.getTime() - this.lastRefreshTime.getTime() < REFRESH_DURATION) {
+      const now = Date.now()
+      if (
+        this.lastRefreshTime != null &&
+        now - this.lastRefreshTime < REFRESH_DURATION
+      ) {
         throw new Error(this.config.refreshErrorMessage || '会话失效')
       }
 
       this.lastRefreshTime = now
-      this.info = { ...this.info, ...res }
-      this.storage.setItem(TOKEN_CACHE_KEY, JSON.stringify(this.info))
+      this.saveAuthInfo({ ...this.info, ...res })
       if (this.refreshCallbacks.length) {
         const list = this.refreshCallbacks
         this.refreshCallbacks = []
@@ -273,5 +292,27 @@ export class TokenAuthService {
     }
 
     return this.info
+  }
+
+  private infoUpdated() {
+    this.emit(TokenAuthService.INFO_UPDATED, this.info)
+    const deadline = this.info.deadline
+    if (deadline == null || this.config.refreshToken == null) {
+      return
+    }
+
+    const delta = deadline - Date.now()
+    if (delta > 0) {
+      window.clearTimeout(this.refreshTimer)
+      this.refreshTimer = window.setTimeout(() => {
+        this.refresh()
+      }, Math.floor(delta * 0.7))
+    }
+  }
+
+  private handleAuthSuccess() {
+    if (this.config.onAuthSuccess) {
+      this.config.onAuthSuccess(this.info)
+    }
   }
 }
