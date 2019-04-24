@@ -153,7 +153,7 @@ export class TokenAuthService extends EventEmitter {
   /**
    * token 鉴权
    */
-  public async auth() {
+  public async auth(overrideParams?: object) {
     if (this.config.getToken == null) {
       throw new Error('TokenAuthService: getToken 未实现')
     }
@@ -196,6 +196,7 @@ export class TokenAuthService extends EventEmitter {
         corpId: params.corp_id || '',
         clientId: this.config.clientId,
         grantType: GRANT_TYPE.Auth,
+        ...(overrideParams || {}),
       }
 
       const res = await this.config.getToken(payload)
