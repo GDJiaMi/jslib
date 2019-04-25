@@ -47,9 +47,9 @@ export const isMobile = isIos || isAndroid
 /**
  * 微信小程序
  */
-export const isMiniProgram = UA.indexOf('miniprogram')
+export const isMiniProgram = UA.indexOf('miniprogram') !== -1
 
 /**
  * 工作宝
  */
-export const isGZB = UA.indexOf('gzb')
+export const isGZB = UA.indexOf('gzb') !== -1
