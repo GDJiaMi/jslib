@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;format&quot; | @gdjiami/jslib</title>
+	<title>Coord | @gdjiami/jslib</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_format_.html">&quot;format&quot;</a>
+					<a href="../modules/_geo_.html">&quot;geo&quot;</a>
+				</li>
+				<li>
+					<a href="_geo_.coord.html">Coord</a>
 				</li>
 			</ul>
-			<h1>External module &quot;format&quot;</h1>
+			<h1>Interface Coord</h1>
 		</div>
 	</div>
 </header>
@@ -69,118 +72,64 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>字符串格式化</p>
+						<p>坐标对象</p>
 					</div>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Coord</span>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Variables</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_format_.html#gb" class="tsd-kind-icon">GB</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_format_.html#kb" class="tsd-kind-icon">KB</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_format_.html#mb" class="tsd-kind-icon">MB</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_format_.html#tb" class="tsd-kind-icon">TB</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_format_.html#formatsize" class="tsd-kind-icon">format<wbr>Size</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_geo_.coord.html#coordtype" class="tsd-kind-icon">coord<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_geo_.coord.html#latitude" class="tsd-kind-icon">latitude</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_geo_.coord.html#longitude" class="tsd-kind-icon">longitude</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
-					<a name="gb" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> GB</h3>
-					<div class="tsd-signature tsd-kind-icon">GB<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;2 ** 30</span></div>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="coordtype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> coord<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">coord<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="../modules/_geo_.html#coordtype" class="tsd-signature-type">CoordType</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/1672627/src/format.ts#L9">format.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/8db0c9b/src/geo.ts#L19">geo.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
-					<a name="kb" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> KB</h3>
-					<div class="tsd-signature tsd-kind-icon">KB<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;2 ** 10</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="latitude" class="tsd-anchor"></a>
+					<h3>latitude</h3>
+					<div class="tsd-signature tsd-kind-icon">latitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/1672627/src/format.ts#L11">format.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/8db0c9b/src/geo.ts#L17">geo.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
-					<a name="mb" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> MB</h3>
-					<div class="tsd-signature tsd-kind-icon">MB<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;2 ** 20</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="longitude" class="tsd-anchor"></a>
+					<h3>longitude</h3>
+					<div class="tsd-signature tsd-kind-icon">longitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/1672627/src/format.ts#L10">format.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/8db0c9b/src/geo.ts#L18">geo.ts:18</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
-					<a name="tb" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> TB</h3>
-					<div class="tsd-signature tsd-kind-icon">TB<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;2 ** 40</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/1672627/src/format.ts#L8">format.ts:8</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>大小单位转换</p>
-						</div>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="formatsize" class="tsd-anchor"></a>
-					<h3>format<wbr>Size</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">format<wbr>Size<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/1672627/src/format.ts#L25">format.ts:25</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>格式化文件长度</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>example</dt>
-									<dd><pre><code class="language-js">formatSize(file.size)</code></pre>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>size: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>文件大小</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-							<p>格式化后文件大小字符串</p>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
@@ -191,59 +140,116 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_eventemitter_.html">&quot;<wbr>Event<wbr>Emitter&quot;</a>
+						<a href="../modules/_eventemitter_.html">&quot;<wbr>Event<wbr>Emitter&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_tokenauthservice_.html">&quot;<wbr>Token<wbr>Auth<wbr>Service&quot;</a>
+						<a href="../modules/_tokenauthservice_.html">&quot;<wbr>Token<wbr>Auth<wbr>Service&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_date_.html">&quot;date&quot;</a>
+						<a href="../modules/_date_.html">&quot;date&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_dom_.html">&quot;dom&quot;</a>
+						<a href="../modules/_dom_.html">&quot;dom&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_format_.html">&quot;format&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_function_.html">&quot;function&quot;</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_format_.html">&quot;format&quot;</a>
+						<a href="../modules/_geo_.html">&quot;geo&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_function_.html">&quot;function&quot;</a>
+						<a href="../modules/_http_.html">&quot;http&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_geo_.html">&quot;geo&quot;</a>
+						<a href="../modules/_index_.html">&quot;index&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_http_.html">&quot;http&quot;</a>
+						<a href="../modules/_number_.html">&quot;number&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">&quot;index&quot;</a>
+						<a href="../modules/_promise_.html">&quot;promise&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_number_.html">&quot;number&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_promise_.html">&quot;promise&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_ua_.html">&quot;ua&quot;</a>
+						<a href="../modules/_ua_.html">&quot;ua&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="_format_.html#gb" class="tsd-kind-icon">GB</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_geo_.coord.html" class="tsd-kind-icon">Coord</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_geo_.coord.html#coordtype" class="tsd-kind-icon">coord<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_geo_.coord.html#latitude" class="tsd-kind-icon">latitude</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_geo_.coord.html#longitude" class="tsd-kind-icon">longitude</a>
+							</li>
+						</ul>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="_format_.html#kb" class="tsd-kind-icon">KB</a>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/_geo_.html#coordtype" class="tsd-kind-icon">Coord<wbr>Type</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="_format_.html#mb" class="tsd-kind-icon">MB</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_geo_.html#pi" class="tsd-kind-icon">PI</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="_format_.html#tb" class="tsd-kind-icon">TB</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_geo_.html#x_pi" class="tsd-kind-icon">X_<wbr>PI</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_format_.html#formatsize" class="tsd-kind-icon">format<wbr>Size</a>
+						<a href="../modules/_geo_.html#bd2gcj" class="tsd-kind-icon">bd2gcj</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_geo_.html#bd2wgs" class="tsd-kind-icon">bd2wgs</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_geo_.html#delta" class="tsd-kind-icon">delta</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_geo_.html#distance" class="tsd-kind-icon">distance</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_geo_.html#gcj2bd" class="tsd-kind-icon">gcj2bd</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_geo_.html#gcj2wgs" class="tsd-kind-icon">gcj2wgs</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_geo_.html#gcj2wgsexact" class="tsd-kind-icon">gcj2wgs<wbr>Exact</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_geo_.html#identity" class="tsd-kind-icon">identity</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_geo_.html#mercatordecrypt" class="tsd-kind-icon">mercator<wbr>Decrypt</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_geo_.html#mercatorencrypt" class="tsd-kind-icon">mercator<wbr>Encrypt</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_geo_.html#outofchina" class="tsd-kind-icon">out<wbr>OfChina</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_geo_.html#transformlat" class="tsd-kind-icon">transform<wbr>Lat</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_geo_.html#transformlon" class="tsd-kind-icon">transform<wbr>Lon</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_geo_.html#wgs2bd" class="tsd-kind-icon">wgs2bd</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_geo_.html#wgs2gcj" class="tsd-kind-icon">wgs2gcj</a>
 					</li>
 				</ul>
 			</nav>

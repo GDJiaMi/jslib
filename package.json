@@ -18,7 +18,7 @@
     "lint": "tslint -c tslint.json \"src/**/*.ts?(x)\"",
     "prettier": "prettier --config .prettierrc --write \"src/**/*.ts?(x)\"",
     "precommit": "lint-staged",
-    "typedoc": "typedoc --out docs src",
+    "document": "typedoc --out docs/code/ src",
     "parcel": "parcel"
   },
   "lint-staged": {

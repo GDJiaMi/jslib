@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;http&quot; | @gdjiami/jslib</title>
+	<title>&quot;dom&quot; | @gdjiami/jslib</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,16 +56,23 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_http_.html">&quot;http&quot;</a>
+					<a href="_dom_.html">&quot;dom&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;http&quot;</h1>
+			<h1>External module &quot;dom&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>DOM 相关的函数</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -73,16 +80,15 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_http_.html#jsonp_prefix" class="tsd-kind-icon">JSONP_<wbr>PREFIX</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_dom_.html#_importedscript" class="tsd-kind-icon">_imported<wbr>Script</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_http_.html#appendquery" class="tsd-kind-icon">append<wbr>Query</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_http_.html#getsearch" class="tsd-kind-icon">get<wbr>Search</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_http_.html#jsonp" class="tsd-kind-icon">jsonp</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_http_.html#searchstringify" class="tsd-kind-icon">search<wbr>Stringify</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_dom_.html#cls" class="tsd-kind-icon">cls</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_dom_.html#hide" class="tsd-kind-icon">hide</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_dom_.html#importscript" class="tsd-kind-icon">import<wbr>Script</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,183 +97,159 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="jsonp_prefix" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> JSONP_<wbr>PREFIX</h3>
-					<div class="tsd-signature tsd-kind-icon">JSONP_<wbr>PREFIX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"__jp"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;__jp&quot;</span></div>
+					<a name="_importedscript" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> _imported<wbr>Script</h3>
+					<div class="tsd-signature tsd-kind-icon">_imported<wbr>Script<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/1672627/src/http.ts#L8">http.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/8db0c9b/src/dom.ts#L41">dom.ts:41</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>全局存储 importScript 资源</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>src: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">true</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="appendquery" class="tsd-anchor"></a>
-					<h3>append<wbr>Query</h3>
+					<a name="cls" class="tsd-anchor"></a>
+					<h3>cls</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">append<wbr>Query<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">cls<span class="tsd-signature-symbol">(</span>opt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, <span class="tsd-signature-symbol">...</span>other<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/1672627/src/http.ts#L53">http.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/8db0c9b/src/dom.ts#L89">dom.ts:89</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>追加查询字符串到url上</p>
+									<p>动态生成 css 类名</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><pre><code class="language-js">appendQuery(<span class="hljs-string">'xxx.html?id=1'</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">'a'</span> })</code></pre>
+									<dd><pre><code class="language-js">cls({<span class="hljs-attr">active</span>: <span class="hljs-literal">true</span>}, <span class="hljs-string">'tab'</span>)</code></pre>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>url: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>obj: <span class="tsd-signature-type">object</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-							<p>追加后的 url</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="getsearch" class="tsd-anchor"></a>
-					<h3>get<wbr>Search</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Search<span class="tsd-signature-symbol">(</span>search<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/1672627/src/http.ts#L22">http.ts:22</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>解析查询字符串</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>example</dt>
-									<dd><pre><code class="language-js">getSearch(<span class="hljs-string">'?id=1&amp;name=a'</span>)</code></pre>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>search: <span class="tsd-signature-type">string</span></h5>
+									<h5>opt: <span class="tsd-signature-type">object</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>查询字符串</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-							<p>格式化后对象</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-					<a name="jsonp" class="tsd-anchor"></a>
-					<h3>jsonp</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">jsonp&lt;T&gt;<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/1672627/src/http.ts#L64">http.ts:64</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>JSONP 请求</p>
-								</div>
-							</div>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>T</h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>url: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>请求地址</p>
-									</div>
-								</li>
-								<li>
-									<h5>params: <span class="tsd-signature-type">object</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>请求参数</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>设置，可配置回调函数及超时时间</p>
+										<p>key-value 对象，通过判断 !!value 是否添加 key</p>
 									</div>
 									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> timeout<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+										<li class="tsd-parameter-index-signature">
+											<h5><span class="tsd-signature-symbol">[</span>name: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
 										</li>
 									</ul>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>other: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>静态类名</p>
+									</div>
+								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="searchstringify" class="tsd-anchor"></a>
-					<h3>search<wbr>Stringify</h3>
+					<a name="hide" class="tsd-anchor"></a>
+					<h3>hide</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">search<wbr>Stringify<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">hide<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, className<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, timeout<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/1672627/src/http.ts#L39">http.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/8db0c9b/src/dom.ts#L18">dom.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>格式化对象为查询字符串, 不包含‘?’前缀</p>
+									<p>隐藏元素</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><pre><code class="language-js">searchStringify({<span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'a'</span>})</code></pre>
+									<dd><pre><code class="language-js">hide(<span class="hljs-string">'.my-el'</span>, <span class="hljs-string">'hide'</span>)</code></pre>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>obj: <span class="tsd-signature-type">object</span></h5>
+									<h5>element: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>格式化对象</p>
+										<p>CSS 选择器</p>
+									</div>
+								</li>
+								<li>
+									<h5>className: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>隐藏效果类名</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> timeout: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1000</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>延迟隐藏时间</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-							<p>格式化后字符串</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="importscript" class="tsd-anchor"></a>
+					<h3>import<wbr>Script</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">import<wbr>Script<span class="tsd-signature-symbol">(</span>src<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/8db0c9b/src/dom.ts#L55">dom.ts:55</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>通过script异步加载资源</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-js">importScript(<span class="hljs-string">`function foo(){console.log('hello world')}`</span>)</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>src: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>注入的脚本字符串</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -288,7 +270,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_date_.html">&quot;date&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="_dom_.html">&quot;dom&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -300,7 +282,7 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_geo_.html">&quot;geo&quot;</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="_http_.html">&quot;http&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -320,19 +302,16 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_http_.html#jsonp_prefix" class="tsd-kind-icon">JSONP_<wbr>PREFIX</a>
+						<a href="_dom_.html#_importedscript" class="tsd-kind-icon">_imported<wbr>Script</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_http_.html#appendquery" class="tsd-kind-icon">append<wbr>Query</a>
+						<a href="_dom_.html#cls" class="tsd-kind-icon">cls</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_http_.html#getsearch" class="tsd-kind-icon">get<wbr>Search</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_http_.html#jsonp" class="tsd-kind-icon">jsonp</a>
+						<a href="_dom_.html#hide" class="tsd-kind-icon">hide</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_http_.html#searchstringify" class="tsd-kind-icon">search<wbr>Stringify</a>
+						<a href="_dom_.html#importscript" class="tsd-kind-icon">import<wbr>Script</a>
 					</li>
 				</ul>
 			</nav>

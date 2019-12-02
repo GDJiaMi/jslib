@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;function&quot; | @gdjiami/jslib</title>
+	<title>GRANT_TYPE | @gdjiami/jslib</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_function_.html">&quot;function&quot;</a>
+					<a href="../modules/_tokenauthservice_.html">&quot;TokenAuthService&quot;</a>
+				</li>
+				<li>
+					<a href="_tokenauthservice_.grant_type.html">GRANT_TYPE</a>
 				</li>
 			</ul>
-			<h1>External module &quot;function&quot;</h1>
+			<h1>Enumeration GRANT_TYPE</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +72,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>函数相关工具函数</p>
+						<p>鉴权类型</p>
 					</div>
 				</div>
 			</section>
@@ -78,72 +81,36 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_function_.html#noop" class="tsd-kind-icon">noop</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_function_.html#noopwithwarn" class="tsd-kind-icon">noop<wbr>With<wbr>Warn</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_tokenauthservice_.grant_type.html#auth" class="tsd-kind-icon">Auth</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_tokenauthservice_.grant_type.html#refresh" class="tsd-kind-icon">Refresh</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="noop" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> noop</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">noop<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/1672627/src/function.ts#L8">function.ts:8</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>空函数，一般用于占位</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-						</li>
-					</ul>
+				<h2>Enumeration members</h2>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="auth" class="tsd-anchor"></a>
+					<h3>Auth</h3>
+					<div class="tsd-signature tsd-kind-icon">Auth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;authorization_code&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/8db0c9b/src/TokenAuthService.ts#L14">TokenAuthService.ts:14</a></li>
+						</ul>
+					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="noopwithwarn" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> noop<wbr>With<wbr>Warn</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">noop<wbr>With<wbr>Warn<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/1672627/src/function.ts#L13">function.ts:13</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>空函数，一般用于占位. 可以提供一个警告信息</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>message: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="refresh" class="tsd-anchor"></a>
+					<h3>Refresh</h3>
+					<div class="tsd-signature tsd-kind-icon">Refresh<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;refresh_token&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/8db0c9b/src/TokenAuthService.ts#L15">TokenAuthService.ts:15</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -154,50 +121,89 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_eventemitter_.html">&quot;<wbr>Event<wbr>Emitter&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tokenauthservice_.html">&quot;<wbr>Token<wbr>Auth<wbr>Service&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_date_.html">&quot;date&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_dom_.html">&quot;dom&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_format_.html">&quot;format&quot;</a>
+						<a href="../modules/_eventemitter_.html">&quot;<wbr>Event<wbr>Emitter&quot;</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_function_.html">&quot;function&quot;</a>
+						<a href="../modules/_tokenauthservice_.html">&quot;<wbr>Token<wbr>Auth<wbr>Service&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_geo_.html">&quot;geo&quot;</a>
+						<a href="../modules/_date_.html">&quot;date&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_http_.html">&quot;http&quot;</a>
+						<a href="../modules/_dom_.html">&quot;dom&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">&quot;index&quot;</a>
+						<a href="../modules/_format_.html">&quot;format&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_number_.html">&quot;number&quot;</a>
+						<a href="../modules/_function_.html">&quot;function&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_promise_.html">&quot;promise&quot;</a>
+						<a href="../modules/_geo_.html">&quot;geo&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_ua_.html">&quot;ua&quot;</a>
+						<a href="../modules/_http_.html">&quot;http&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_number_.html">&quot;number&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_promise_.html">&quot;promise&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_ua_.html">&quot;ua&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_function_.html#noop" class="tsd-kind-icon">noop</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-enum tsd-parent-kind-external-module">
+						<a href="_tokenauthservice_.grant_type.html" class="tsd-kind-icon">GRANT_<wbr>TYPE</a>
+						<ul>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="_tokenauthservice_.grant_type.html#auth" class="tsd-kind-icon">Auth</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="_tokenauthservice_.grant_type.html#refresh" class="tsd-kind-icon">Refresh</a>
+							</li>
+						</ul>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_function_.html#noopwithwarn" class="tsd-kind-icon">noop<wbr>With<wbr>Warn</a>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_tokenauthservice_.tokenauthservice.html" class="tsd-kind-icon">Token<wbr>Auth<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_tokenauthservice_.authbypasswordparams.html" class="tsd-kind-icon">Auth<wbr>ByPassword<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_tokenauthservice_.authinfo.html" class="tsd-kind-icon">Auth<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_tokenauthservice_.authparams.html" class="tsd-kind-icon">Auth<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_tokenauthservice_.refreshparams.html" class="tsd-kind-icon">Refresh<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_tokenauthservice_.tokenauthserviceconfig.html" class="tsd-kind-icon">Token<wbr>Auth<wbr>Service<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_tokenauthservice_.html#refresh_duration" class="tsd-kind-icon">REFRESH_<wbr>DURATION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/_tokenauthservice_.html#sms_client_type" class="tsd-kind-icon">SMS_<wbr>CLIENT_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_tokenauthservice_.html#token_cache_key" class="tsd-kind-icon">TOKEN_<wbr>CACHE_<wbr>KEY</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/_tokenauthservice_.html#token_header" class="tsd-kind-icon">TOKEN_<wbr>HEADER</a>
 					</li>
 				</ul>
 			</nav>
