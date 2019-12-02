@@ -9,6 +9,15 @@ const JSONP_PREFIX = '__jp'
 
 /**
  * 解析查询字符串
+ *
+ * @example
+ * ```js
+ * getSearch('?id=1&name=a')
+ * ```
+ *
+ * @param search 查询字符串
+ *
+ * @returns 格式化后对象
  */
 export function getSearch(search: string) {
   search = search.startsWith('?') ? search.slice(1) : search
@@ -17,6 +26,15 @@ export function getSearch(search: string) {
 
 /**
  * 格式化对象为查询字符串, 不包含‘?’前缀
+ *
+ * @example
+ * ```js
+ * searchStringify({id: 1, name: 'a'})
+ * ```
+ *
+ * @param obj 格式化对象
+ *
+ * @returns 格式化后字符串
  */
 export function searchStringify(obj: object) {
   return qs.stringify(obj)
@@ -24,6 +42,13 @@ export function searchStringify(obj: object) {
 
 /**
  * 追加查询字符串到url上
+ *
+ * @example
+ * ```js
+ * appendQuery('xxx.html?id=1', { name: 'a' })
+ * ```
+ *
+ * @returns 追加后的 url
  */
 export function appendQuery(url: string, obj: object) {
   const params = searchStringify(obj)
@@ -32,9 +57,9 @@ export function appendQuery(url: string, obj: object) {
 
 /**
  * JSONP 请求
- * @param url
- * @param params
- * @param options
+ * @param url 请求地址
+ * @param params 请求参数
+ * @param options 设置，可配置回调函数及超时时间
  */
 export default async function jsonp<T>(
   url: string,

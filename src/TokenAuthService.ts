@@ -70,6 +70,9 @@ export interface TokenAuthServiceConfig {
    * 通过用户名密码鉴权
    */
   getTokenByPassword?: (params: AuthByPasswordParams) => Promise<AuthInfo>
+  /**
+   * 刷新token
+   */
   refreshToken: (params: RefreshParams) => Promise<AuthInfo>
   onAuthSuccess?: (info: AuthInfo) => void
   onAuthFailed?: (error: Error) => void
@@ -278,10 +281,16 @@ export class TokenAuthService extends EventEmitter {
     return SMS_CLIENT_TYPE.indexOf(this.info.clientType) !== -1
   }
 
+  /**
+   * 获取token
+   */
   public getToken() {
     return this.info && this.info.accessToken
   }
 
+  /**
+   * 获取用户信息
+   */
   public getUserInfo() {
     if (this.info) {
       return this.info

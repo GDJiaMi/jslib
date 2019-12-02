@@ -1,6 +1,6 @@
 {
   "name": "@gdjiami/jslib",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Jiami FrontEnd helpers and Services",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -8,6 +8,7 @@
     "registry": "https://registry.npmjs.org",
     "access": "public"
   },
+  "sideEffects": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rimraf lib",
@@ -17,6 +18,7 @@
     "lint": "tslint -c tslint.json \"src/**/*.ts?(x)\"",
     "prettier": "prettier --config .prettierrc --write \"src/**/*.ts?(x)\"",
     "precommit": "lint-staged",
+    "typedoc": "typedoc --out docs src",
     "parcel": "parcel"
   },
   "lint-staged": {
@@ -45,9 +47,11 @@
     "lint-staged": "^7.2.0",
     "prettier": "^1.13.7",
     "rimraf": "^2.6.2",
+    "tslib": "^1.10.0",
     "tslint": "^5.10.0",
     "tslint-eslint-rules": "4.1.1",
     "tslint-react": "3.2.0",
+    "typedoc": "^0.15.3",
     "typescript": "^3.4.4"
   },
   "dependencies": {

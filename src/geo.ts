@@ -1,6 +1,7 @@
 /**
  * 地理相关工具函数
  */
+
 const PI = 3.14159265358979324
 const X_PI = (3.14159265358979324 * 3000.0) / 180.0
 
@@ -186,6 +187,9 @@ export function distance(
   return distance
 }
 
+/**
+ * @param { latitude, longitude } 坐标轴
+ */
 export function outOfChina({ latitude, longitude }: Coord): boolean {
   if (longitude < 72.004 || longitude > 137.8347) return true
   if (latitude < 0.8293 || latitude > 55.8271) return true

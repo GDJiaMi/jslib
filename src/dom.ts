@@ -2,6 +2,19 @@
  * DOM 相关的函数
  */
 
+/**
+ * 隐藏元素
+ *
+ * @example
+ *
+ * ```js
+ * hide('.my-el', 'hide')
+ * ```
+ *
+ * @param element CSS 选择器
+ * @param className 隐藏效果类名
+ * @param timeout 延迟隐藏时间
+ */
 export function hide(
   element: string,
   className: string,
@@ -22,10 +35,22 @@ export function hide(
   ele.classList.add(className)
 }
 
+/**
+ * 全局存储 importScript 资源
+ */
 const _importedScript: { [src: string]: true } = {}
 
 /**
- * 通过script加载资源
+ * 通过script异步加载资源
+ *
+ *
+ * @example
+ *
+ * ```js
+ * importScript(`function foo(){console.log('hello world')}`)
+ * ```
+ *
+ * @param src 注入的脚本字符串
  */
 export async function importScript(src: string): Promise<undefined> {
   return new Promise((resolve, reject) => {
@@ -50,7 +75,16 @@ export async function importScript(src: string): Promise<undefined> {
 }
 
 /**
- * 生成css 类名
+ * 动态生成 css 类名
+ *
+ * @example
+ *
+ * ```js
+ * cls({active: true}, 'tab')
+ * ```
+ *
+ * @param opt key-value 对象，通过判断 !!value 是否添加 key
+ * @param other 静态类名
  */
 export function cls(opt: { [name: string]: any }, ...other: string[]) {
   return Object.keys(opt)

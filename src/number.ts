@@ -6,8 +6,15 @@ let uid = 0
 
 /**
  * 遍历n次
- * @param time
- * @param it
+ * @example
+ * ```js
+ * times(10, i => i) // [0, 1, 2, ..., 9]
+ * ```
+ *
+ * @param time 次数
+ * @param it 类型转换
+ *
+ * @returns 由第二参数 it 返回值定义数组类型
  */
 export function times<T>(time: number, it: (index: number) => T): T[] {
   const arr: T[] = []

@@ -1,6 +1,10 @@
 /**
  * promise相关的工具函数
  */
+
+/**
+ * 类型定义
+ */
 export type PromiseResolver<T> = (val: T) => void
 export type PromiseReject = (reason: any) => void
 export type PromiseCallback<T> = (
@@ -76,6 +80,11 @@ export async function retryablePromise<T>(
 
 /**
  * 抽取出promise的Resolve和Reject函数, 可以在外部进行使用
+ *
+ * @example
+ * ```js
+ * const { promise, reject, resolve } = extraPromise()
+ * ```
  */
 export async function extraPromise<T>() {
   let resolve: PromiseResolver<T>
