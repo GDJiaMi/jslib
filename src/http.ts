@@ -114,3 +114,21 @@ export default async function jsonp<T>(
     target.parentNode!.insertBefore(script, target)
   })
 }
+
+/**
+ * 获取地址参数
+ * @param key 参数 key 值
+ *
+ * @example
+ *
+ * ```js
+ * window.location.href = 'http://xxx.html?id=007&name=test'
+ * getUrlParam(id) // => '007'
+ * getUrlParam(name) // => 'test'
+ * getUrlParam(age) // => null
+ * ```
+ */
+export function getUrlParam(key: string) {
+  const urlStatus = new URLSearchParams(location.hash.split('?')[1])
+  return urlStatus.get(key)
+}

@@ -2,8 +2,6 @@
  * 数字相关的操作
  */
 
-let uid = 0
-
 /**
  * 遍历n次
  * @example
@@ -28,6 +26,12 @@ export function times<T>(time: number, it: (index: number) => T): T[] {
  * 获取指定范围整数随机数, 不包括max
  * @param min
  * @param max
+ *
+ * @example
+ * ```js
+ * getRandomInt(0, 10) // => 2
+ * ```
+ *
  */
 export function getRandomInt(min: number, max: number) {
   const _min = Math.ceil(min)
@@ -35,6 +39,7 @@ export function getRandomInt(min: number, max: number) {
   return Math.floor(Math.random() * (_max - _min)) + _min
 }
 
+let uid = 0
 /**
  * 获取简单的随机数
  */
