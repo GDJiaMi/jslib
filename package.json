@@ -3,6 +3,7 @@
   "version": "0.4.2",
   "description": "Jiami FrontEnd helpers and Services",
   "main": "index.js",
+  "module": "index.js",
   "typings": "index.d.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
@@ -12,13 +13,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rimraf lib",
-    "build:es6": "tsc -d --outDir ./lib --module CommonJS ",
+    "build:es6": "tsc -b tsconfig-build.json",
     "postbuild:es6": "cpx \"src/**/!(example)/*.+(css|jpg|jpeg|gif|png)\" ./lib",
     "build": "npm run build:es6 && cp package.json ./lib && cp README.md ./lib",
     "lint": "tslint -c tslint.json \"src/**/*.ts?(x)\"",
     "prettier": "prettier --config .prettierrc --write \"src/**/*.ts?(x)\"",
     "precommit": "lint-staged",
-    "document": "typedoc --out docs/code/ src",
+    "document": "typedoc --out docs/code/ src --excludeNotExported --exclude \"src/__tests__/*.ts\"",
+    "pub": "npm run build && cd lib && npm publish",
     "parcel": "parcel"
   },
   "lint-staged": {
