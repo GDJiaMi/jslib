@@ -64,35 +64,70 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>时间相关的帮助方法</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Variables</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_date_.html#todo" class="tsd-kind-icon">TODO</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_date_.html#formatdate" class="tsd-kind-icon">format<wbr>Date</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
-					<a name="todo" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> TODO</h3>
-					<div class="tsd-signature tsd-kind-icon">TODO<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"TODO:"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;TODO:&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/4614408/src/date.ts#L4">date.ts:4</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>时间相关的帮助方法</p>
-						</div>
-					</div>
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="formatdate" class="tsd-anchor"></a>
+					<h3>format<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">format<wbr>Date<span class="tsd-signature-symbol">(</span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/7e41bec/src/date.ts#L23">date.ts:23</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>时间或时间戳转换成 YYYY-mm-DD HH:MM:SS</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-js">formatDate(<span class="hljs-number">1575370479028</span>) <span class="hljs-comment">// =&gt; '2019-12-03'</span>
+formatDate(<span class="hljs-number">1575370479028</span>,{ <span class="hljs-attr">showTime</span>: <span class="hljs-literal">true</span> }) <span class="hljs-comment">// =&gt; '2019-12-03 18:54'</span></code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>date: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>时间</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>showTime: 是否显示时间；showSec: 是否显示秒数</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -110,6 +145,9 @@
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_array_.html">&quot;array&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_compress_.html">&quot;compress&quot;</a>
 					</li>
 					<li class="current tsd-kind-external-module">
 						<a href="_date_.html">&quot;date&quot;</a>
@@ -136,14 +174,17 @@
 						<a href="_promise_.html">&quot;promise&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="_string_.html">&quot;string&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="_ua_.html">&quot;ua&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="_date_.html#todo" class="tsd-kind-icon">TODO</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_date_.html#formatdate" class="tsd-kind-icon">format<wbr>Date</a>
 					</li>
 				</ul>
 			</nav>

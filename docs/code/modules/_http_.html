@@ -73,6 +73,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_http_.html#appendquery" class="tsd-kind-icon">append<wbr>Query</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_http_.html#getsearch" class="tsd-kind-icon">get<wbr>Search</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_http_.html#geturlparam" class="tsd-kind-icon">get<wbr>Url<wbr>Param</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_http_.html#jsonp" class="tsd-kind-icon">jsonp</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_http_.html#searchstringify" class="tsd-kind-icon">search<wbr>Stringify</a></li>
 							</ul>
@@ -92,7 +93,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/4614408/src/http.ts#L53">http.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/7e41bec/src/http.ts#L53">http.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -129,7 +130,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/4614408/src/http.ts#L22">http.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/7e41bec/src/http.ts#L22">http.ts:22</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -156,6 +157,48 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="geturlparam" class="tsd-anchor"></a>
+					<h3>get<wbr>Url<wbr>Param</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Url<wbr>Param<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/7e41bec/src/http.ts#L131">http.ts:131</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>获取地址参数</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-js"><span class="hljs-built_in">window</span>.location.href = <span class="hljs-string">'http://xxx.html?id=007&amp;name=test'</span>
+getUrlParam(id) <span class="hljs-comment">// =&gt; '007'</span>
+getUrlParam(name) <span class="hljs-comment">// =&gt; 'test'</span>
+getUrlParam(age) <span class="hljs-comment">// =&gt; null</span></code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>参数 key 值</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">string</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
 					<a name="jsonp" class="tsd-anchor"></a>
 					<h3>jsonp</h3>
@@ -166,7 +209,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/4614408/src/http.ts#L64">http.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/7e41bec/src/http.ts#L64">http.ts:64</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -217,7 +260,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/4614408/src/http.ts#L39">http.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/7e41bec/src/http.ts#L39">http.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -262,6 +305,9 @@
 						<a href="_array_.html">&quot;array&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="_compress_.html">&quot;compress&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="_date_.html">&quot;date&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -286,6 +332,9 @@
 						<a href="_promise_.html">&quot;promise&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="_string_.html">&quot;string&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="_ua_.html">&quot;ua&quot;</a>
 					</li>
 				</ul>
@@ -297,6 +346,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_http_.html#getsearch" class="tsd-kind-icon">get<wbr>Search</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_http_.html#geturlparam" class="tsd-kind-icon">get<wbr>Url<wbr>Param</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="_http_.html#jsonp" class="tsd-kind-icon">jsonp</a>

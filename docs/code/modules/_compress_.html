@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>GRANT_TYPE | @gdjiami/jslib</title>
+	<title>&quot;compress&quot; | @gdjiami/jslib</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,61 +54,105 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_tokenauthservice_.html">&quot;TokenAuthService&quot;</a>
-				</li>
-				<li>
-					<a href="_tokenauthservice_.grant_type.html">GRANT_TYPE</a>
+					<a href="_compress_.html">&quot;compress&quot;</a>
 				</li>
 			</ul>
-			<h1>Enumeration GRANT_TYPE</h1>
+			<h1>External module &quot;compress&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>鉴权类型</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_tokenauthservice_.grant_type.html#auth" class="tsd-kind-icon">Auth</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_tokenauthservice_.grant_type.html#refresh" class="tsd-kind-icon">Refresh</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_compress_.html#compressimage" class="tsd-kind-icon">compress<wbr>Image</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_compress_.html#compressimagebysize" class="tsd-kind-icon">compress<wbr>Image<wbr>BySize</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="auth" class="tsd-anchor"></a>
-					<h3>Auth</h3>
-					<div class="tsd-signature tsd-kind-icon">Auth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;authorization_code&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/7e41bec/src/TokenAuthService.ts#L14">TokenAuthService.ts:14</a></li>
-						</ul>
-					</aside>
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="compressimage" class="tsd-anchor"></a>
+					<h3>compress<wbr>Image</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">compress<wbr>Image<span class="tsd-signature-symbol">(</span>file<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">File</span>, quality<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">File</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/7e41bec/src/compress.ts#L61">compress.ts:61</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>对图片进行压缩处理，通过压缩比率控制输出文件的大小</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>file: <span class="tsd-signature-type">File</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>图片文件</p>
+									</div>
+								</li>
+								<li>
+									<h5>quality: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>压缩比率</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">File</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="refresh" class="tsd-anchor"></a>
-					<h3>Refresh</h3>
-					<div class="tsd-signature tsd-kind-icon">Refresh<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;refresh_token&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/7e41bec/src/TokenAuthService.ts#L15">TokenAuthService.ts:15</a></li>
-						</ul>
-					</aside>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="compressimagebysize" class="tsd-anchor"></a>
+					<h3>compress<wbr>Image<wbr>BySize</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">compress<wbr>Image<wbr>BySize<span class="tsd-signature-symbol">(</span>file<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">File</span>, maxSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">File</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/GDJiaMi/jslib/blob/7e41bec/src/compress.ts#L75">compress.ts:75</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>对图片进行压缩处理，通过传入的 maxSize， 控制输出文件的大小，压缩到小于 maxSize，或者到达最小压缩比的文件</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>file: <span class="tsd-signature-type">File</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>图片文件</p>
+									</div>
+								</li>
+								<li>
+									<h5>maxSize: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>压缩最大值，单位字节</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">File</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -119,89 +163,56 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_eventemitter_.html">&quot;<wbr>Event<wbr>Emitter&quot;</a>
+						<a href="_eventemitter_.html">&quot;<wbr>Event<wbr>Emitter&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_tokenauthservice_.html">&quot;<wbr>Token<wbr>Auth<wbr>Service&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_array_.html">&quot;array&quot;</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_tokenauthservice_.html">&quot;<wbr>Token<wbr>Auth<wbr>Service&quot;</a>
+						<a href="_compress_.html">&quot;compress&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_array_.html">&quot;array&quot;</a>
+						<a href="_date_.html">&quot;date&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_compress_.html">&quot;compress&quot;</a>
+						<a href="_dom_.html">&quot;dom&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_date_.html">&quot;date&quot;</a>
+						<a href="_format_.html">&quot;format&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_dom_.html">&quot;dom&quot;</a>
+						<a href="_function_.html">&quot;function&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_format_.html">&quot;format&quot;</a>
+						<a href="_geo_.html">&quot;geo&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_function_.html">&quot;function&quot;</a>
+						<a href="_http_.html">&quot;http&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_geo_.html">&quot;geo&quot;</a>
+						<a href="_number_.html">&quot;number&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_http_.html">&quot;http&quot;</a>
+						<a href="_promise_.html">&quot;promise&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_number_.html">&quot;number&quot;</a>
+						<a href="_string_.html">&quot;string&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_promise_.html">&quot;promise&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_string_.html">&quot;string&quot;</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_ua_.html">&quot;ua&quot;</a>
+						<a href="_ua_.html">&quot;ua&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-enum tsd-parent-kind-external-module">
-						<a href="_tokenauthservice_.grant_type.html" class="tsd-kind-icon">GRANT_<wbr>TYPE</a>
-						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_tokenauthservice_.grant_type.html#auth" class="tsd-kind-icon">Auth</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="_tokenauthservice_.grant_type.html#refresh" class="tsd-kind-icon">Refresh</a>
-							</li>
-						</ul>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_compress_.html#compressimage" class="tsd-kind-icon">compress<wbr>Image</a>
 					</li>
-				</ul>
-				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_tokenauthservice_.tokenauthservice.html" class="tsd-kind-icon">Token<wbr>Auth<wbr>Service</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_tokenauthservice_.authbypasswordparams.html" class="tsd-kind-icon">Auth<wbr>ByPassword<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_tokenauthservice_.authinfo.html" class="tsd-kind-icon">Auth<wbr>Info</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_tokenauthservice_.authparams.html" class="tsd-kind-icon">Auth<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_tokenauthservice_.refreshparams.html" class="tsd-kind-icon">Refresh<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_tokenauthservice_.tokenauthserviceconfig.html" class="tsd-kind-icon">Token<wbr>Auth<wbr>Service<wbr>Config</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_tokenauthservice_.html#sms_client_type" class="tsd-kind-icon">SMS_<wbr>CLIENT_<wbr>TYPE</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_tokenauthservice_.html#token_header" class="tsd-kind-icon">TOKEN_<wbr>HEADER</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_compress_.html#compressimagebysize" class="tsd-kind-icon">compress<wbr>Image<wbr>BySize</a>
 					</li>
 				</ul>
 			</nav>
