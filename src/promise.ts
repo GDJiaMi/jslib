@@ -1,5 +1,5 @@
 /**
- * promise相关的工具函数
+ * promise、异步操作相关的工具函数。
  */
 
 /**
@@ -101,4 +101,111 @@ export async function extraPromise<T>() {
     reject: reject!,
     resolve: resolve!,
   }
+}
+
+/**
+ * 按照 push 顺序执行并发的任务
+ * 防止并发多个任务只执行一个任务后其他任务被销毁
+ *
+ * @typeParam R 自定义返回值类型
+ *
+ * @returns push 将异步操作加入任务队列，run 按顺序执行任务队列里的所有异步操作
+ *
+ * @example
+ *
+ * ```js
+ *
+ * const tasks = concurrentTask<MessageData[] | undefined>()
+ *
+ * for (let i = 0; i < messages.length; i++) {
+ *    tasks.push(() => {}) // tasks.push(Promise<any>)
+ * }
+ * const res = await tasks.run()
+ *
+ * ```
+ */
+export function concurrentTask<R>() {
+  interface Task {
+    index: number
+    res: R
+  }
+  let i = 0
+  const tasks: Array<Promise<Task>> = []
+
+  const run = async () => {
+    return Promise.all(tasks).then(arr => {
+      return arr.sort((a, b) => a.index - b.index).map(i => i.res)
+    })
+  }
+
+  const push = (task: () => Promise<R>) => {
+    const order = i++
+    tasks.push(
+      new Promise<Task>((resolve, reject) => {
+        task()
+          .then(res => {
+            resolve({ index: order, res })
+          })
+          .catch(reject)
+      }),
+    )
+  }
+
+  return {
+    push,
+    run,
+  }
+}
+
+interface Task<T = any> {
+  resolve: (res: T) => void
+  reject: (err: any) => void
+}
+
+const pendingTask: { [id: string]: Task[] } = {}
+/**
+ * 执行异步任务, 它会处理重复发起的任务
+ * @param id 任务唯一索引
+ * @param task 异步执行方法
+ *
+ * @example
+ *
+ * ```js
+ * const res = await executeAsyncTask<User>('get-user', async () => Promise<User>) // 如多次发起请求，只会请求一次
+ * ```
+ */
+export async function executeAsyncTask<T>(
+  id: string,
+  task: () => Promise<T>,
+): Promise<T> {
+  if (id in pendingTask) {
+    return new Promise((resolve, reject) => {
+      pendingTask[id].push({ resolve, reject })
+    })
+  }
+
+  let res: T | undefined
+  let err: any
+  try {
+    pendingTask[id] = []
+    res = await task()
+  } catch (err) {
+    err = err
+  }
+
+  for (let t of pendingTask[id]) {
+    if (err != null) {
+      t.reject(err)
+    } else {
+      t.resolve(res)
+    }
+  }
+
+  delete pendingTask[id]
+
+  if (err != null) {
+    throw err
+  }
+
+  return res as T
 }
