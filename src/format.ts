@@ -15,7 +15,7 @@ export const KB = 2 ** 10
  *
  * @example
  * ```js
- * formatSize(file.size)
+ * formatSize(12582912) // => '12MB'
  * ```
  *
  * @param size 文件大小

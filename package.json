@@ -11,7 +11,6 @@
   },
   "sideEffects": false,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rimraf lib",
     "build:es6": "tsc -b tsconfig-build.json",
     "postbuild:es6": "cpx \"src/**/!(example)/*.+(css|jpg|jpeg|gif|png)\" ./lib",
@@ -21,6 +20,9 @@
     "precommit": "lint-staged",
     "document": "typedoc --out docs/code/ src --excludeNotExported --exclude \"src/__tests__/*.ts\"",
     "pub": "npm run build && cd lib && npm publish",
+    "test:type": "tsc -b tsconfig.test.json",
+    "test": "jest --coverage && npm run test:type",
+    "test:watch": "jest --watch",
     "parcel": "parcel"
   },
   "lint-staged": {
@@ -41,10 +43,28 @@
   "peerDependencies": {
     "tslib": "^1.9.3"
   },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/typescript/"
+    ],
+    "roots": [
+      "src"
+    ]
+  },
   "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@types/jest": "^24.0.23",
     "@types/qs": "^6.5.1",
+    "babel-jest": "^24.9.0",
     "cpx": "^1.5.0",
     "husky": "^0.14.3",
+    "jest": "^24.9.0",
     "jh-tslint": "^1.0.0",
     "lint-staged": "^7.2.0",
     "prettier": "^1.13.7",

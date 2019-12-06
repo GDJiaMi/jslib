@@ -18,7 +18,7 @@ export function arrayJoin<R>(arr: R[], data: R) {
   if (arr.length <= 1) {
     return arr
   }
-  let temp = []
+  const temp = []
   for (let i = 0; i < arr.length; i = i + 1) {
     temp.push(arr[i])
     if (i < arr.length - 1) {
