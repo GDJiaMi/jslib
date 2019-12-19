@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./lib/ie8",
+    "module": "ESNext",
+    "target": "ESNext",
+    "importHelpers": false,
+    "declaration": true
+  },
+  "exclude": ["**/__tests__/*"]
+}
