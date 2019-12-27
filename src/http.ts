@@ -61,7 +61,7 @@ export function appendQuery(url: string, obj: object) {
  * @param params 请求参数
  * @param options 设置，可配置回调函数及超时时间
  */
-export default async function jsonp<T>(
+export async function jsonp<T>(
   url: string,
   params: object,
   options: {
@@ -75,7 +75,7 @@ export default async function jsonp<T>(
     ...options,
   }
 
-  const prefix = `${JSONP_PREFIX}_${getUid}`
+  const prefix = `${JSONP_PREFIX}_${getUid()}`
   const finalParams = {
     [finalOptions.callback]: prefix,
     ...params,
